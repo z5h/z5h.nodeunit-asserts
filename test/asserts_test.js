@@ -20,7 +20,7 @@ exports.suite = {
         return x;
       },
       function () {
-        x = x - 1;
+        x = x + 1;
       }
     );
     t.done();
@@ -35,6 +35,22 @@ exports.suite = {
       function () {
       }
     );
+    t.done();
+  },
+  'includes': function (t) {
+    t.includes([1,2,3], [3]);
+    t.includes([1,2,3], [2]);
+    t.includes([1,2,3], [1]);
+    t.includes([1,2,3], [1,2,3]);
+    t.includes([1,2,3], [3,1]);
+    t.includes([1,2,3], []);
+    t.done();
+   },
+  'excludes': function (t) {
+    t.excludes([], []);
+    t.excludes([], [3]);
+    t.excludes([1,2], [3]);
+    t.excludes([1,2], [0]);
     t.done();
   }
 };
