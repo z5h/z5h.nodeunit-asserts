@@ -20,7 +20,7 @@ exports.suite = {
         return x;
       },
       function () {
-        x = x + 1;
+        x = x - 1;
       }
     );
     t.done();
